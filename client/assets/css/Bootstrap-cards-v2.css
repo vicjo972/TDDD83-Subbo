@@ -1,0 +1,29 @@
+.card {
+  margin-top: 15px;
+}
+
+#advertcard {
+min-width: 80%;
+}  
+
+
+#advertcard .card-img-wrapper {
+display: block;
+content: "";
+/* 16:9 aspect ratio */
+padding-bottom: 56.25%;
+
+}
+#advertcard .card-img-wrapper .card-img-top {
+position: absolute;
+left: 0;
+top: 0;
+width: 100%;
+height: 100%;
+}
+
+.housingcard .card-img-top {
+width: 100%;
+height: 230px;
+object-fit: cover;
+}

@@ -1,0 +1,18 @@
+/* .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+    background-color: #131F28 !important;
+} */
+
+.btn-primary {
+    color: #fff;
+    background-color: #131F28;
+    border-color: #131F28; /*set the color you want here*/
+}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
+    color: #fff;
+    background-color: #394955;
+    border-color: #394955; /*set the color you want here*/
+}
+
+/* .btn-warning, .btn-warning:hover, .btn-warning:active, .btn-warning:visited {
+    background-color: rgb(19,31,40) !important;
+} */

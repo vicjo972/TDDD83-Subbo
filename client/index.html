@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Subbo</title>
+    <link rel="shortcut icon" type="image/png" href="assets/img/subbologo.png" />
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/fontawesome-free/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/Footer-Basic.css">
+    <link rel="stylesheet" href="assets/css/Bootstrap-cards-v2.css">
+    <link rel="stylesheet" href="assets/css/payment.css">
+    <link rel="stylesheet" href="assets/css/rating.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/chat.css">
+    <link rel="stylesheet" href="assets/css/General-Styling.css">
+    <link rel="stylesheet" href="assets/css/admin-page.css">
+</head>
+<!-- NAVBAR -> WRAPPER -> FOOTER -->
+
+<body>
+    <nav class="navbar navbar-dark navbar-expand-lg fixed-top clean-navbar" style="background: #131f28;">
+        <div class="container"><img src="assets/img/subbologo.png" style="width: 76px;"><a class="navbar-brand logo"
+                href="./" style="font-size: 40px;height: 58px;margin-left: 12px;">Subbo</a><button
+                data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle
+                    navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1" style="margin-top: 20px;">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="/">Hem</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/faq">FAQ</a></li>
+                    <li class="nav-item signed-out"><a class="nav-link" href="/register">bli medlem</a></li>
+                    <li class="nav-item signed-in"><a class="nav-link" href="/create-advert">skapa annons</a></li>
+                    <li class="nav-item housing-button"><a class="nav-link" href="/housing">bostäder</a></li>
+                    <li class="nav-item signed-in"><a class="nav-link" href="/chat">Chatt</a></li>
+                    <li id="mypages-button" class="nav-item signed-in"><a class="nav-link" href="/my-pages">Mina
+                            sidor</a></li>
+                    <li class="nav-item signed-out"><a class="nav-link" href="/login">Logga in</a></li>
+                    <li id="logout" class="nav-item signed-in"><a class="nav-link" href="#">logga ut</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main class="page main" id="wrapper">
+        <!-- WRAPPER: inject scripts here with JQUERY -->
+    </main>
+    <footer class="footer-basic" style="background: #131f28;">
+        <ul class="list-inline">
+            <li class="list-inline-item"><a href="./" style="color: rgb(255,255,255);">Hem</a></li>
+            <li class="list-inline-item housing-button"><a href="./housing"
+                    style="color: rgb(255,255,255);">Bostäder</a></li>
+            <li class="list-inline-item"><a href="./faq" style="color: rgb(255,255,255);">FAQ</a></li>
+        </ul>
+        <p class="copyright">Subbo © 2021</p>
+    </footer>
+
+    <!-- BELOW ARE ALL SCRIPTS FOR DIFFERENT VIEWS -->
+
+    <!-- home view -->
+
+    <script id="view-home" type="text/html">
+        <section class="clean-block clean-hero" style="color: rgba(19,31,40,0.95);background: url(&quot;assets/img/apartments.png&quot;) bottom / cover no-repeat;">
+            <div class="text">
+                <h2 style="margin-top: 35px;">Hyr eller hyr ut din bostad idag!</h2>
+                <p></p><button class="btn btn-outline-light btn-lg"><a href="/housing" type="button" style="color: rgb(248, 249, 250);margin-left: 0px;">Se tillgängliga bostäder</a></button>
+                <div>
+                    <h5 style="margin-top: 28px;">eller</h5>
+                    <p></p><button class="btn btn-outline-light btn-lg" onclick = rent() type="button" style="color: rgb(248, 249, 250);margin-left: 0px;margin-top: 0px;margin-bottom: 0px;">Hyr ut din bostad</button>
+                </div>
+            </div>
+        </section>
+        <section style="background: #f6f6f6;">
+            <div class="container">
+                <div style="padding-top: 59px;padding-bottom: 34px;">
+                    <h1 class="text-center" style="border-width: -9px;color: #131f28;padding-bottom: 5px;padding-top: 9px;">Varför Subbo?</h1>
+                </div>
+                <div class="row justify-content-center" style="padding-bottom: 70px;">
+                    <div class="col-md-5 feature-box"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" class="bi bi-house-fill icon" style="color: #131f28;">
+                            <path fill-rule="evenodd" d="M8 3.293l6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"></path>
+                            <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"></path>
+                        </svg>
+                        <h4>Hyr en bostad enkelt</h4>
+                        <p>Skicka enkelt intresseanmälan till hyresvärdar</p>
+                    </div>
+                    <div class="col-md-5 feature-box"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" class="bi bi-people-fill icon" style="color: #131f28;">
+                            <path fill-rule="evenodd" d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216zM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"></path>
+                        </svg>
+                        <h4>Hyr ut din bostad</h4>
+                        <p>Hyr enkelt ut din bostad till ett lågt pris</p>
+                    </div>
+                    <div class="col-md-5 feature-box"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" class="bi bi-cash icon" style="color: #131f28;">
+                            <path fill-rule="evenodd" d="M15 4H1v8h14V4zM1 3a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H1z"></path>
+                            <path d="M13 4a2 2 0 0 0 2 2V4h-2zM3 4a2 2 0 0 1-2 2V4h2zm10 8a2 2 0 0 1 2-2v2h-2zM3 12a2 2 0 0 0-2-2v2h2zm7-4a2 2 0 1 1-4 0 2 2 0 0 1 4 0z"></path>
+                        </svg>
+                        <h4>Håll koll dina hyror</h4>
+                        <p>Håll koll på betalda hyror eller påminn din hyresgäst lätt på mina sidor</p>
+                    </div>
+                    <div class="col-md-5 feature-box"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" class="bi bi-eye icon" style="color: #131f28;">
+                            <path fill-rule="evenodd" d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.134 13.134 0 0 0 1.66 2.043C4.12 11.332 5.88 12.5 8 12.5c2.12 0 3.879-1.168 5.168-2.457A13.134 13.134 0 0 0 14.828 8a13.133 13.133 0 0 0-1.66-2.043C11.879 4.668 10.119 3.5 8 3.5c-2.12 0-3.879 1.168-5.168 2.457A13.133 13.133 0 0 0 1.172 8z"></path>
+                            <path fill-rule="evenodd" d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"></path>
+                        </svg>
+                        <h4>Ha koll på vem du hyr ut till</h4>
+                        <p>Välj hyresgäst utifrån dina krav</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </script>
+
+    <!-- /faq view -->
+
+    <script id="view-faq" type="text/html">
+        <section class="clean-block clean-faq dark" style="background: rgb(246, 246, 246);">
+            <div class="container">
+                <div class="block-heading">
+                    <h2 style="color: #131f28;font-size: 35px;">FAQ</h2>
+                    <p>Subbo är en tjänst för hyrning och uthyrning av bostäder. Här svarar vi på några vanliga frågor.</p>
+                </div>
+                <div class="block-content">
+                    <div class="faq-item">
+                        <h4 class="question">Vad är Subbo?</h4>
+                        <div class="answer">
+                            <p>Subbo är en tjänst som hjälper hyresgäster och små/privata hyresvärdar att komma i kontakt med varandra.
+                                Oavsett om du har en lägenhet för mycket eller för lite är Subbo tjänsten för dig! 
+                            </p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <h4 class="question">Varför borde jag använda Subbo och inte en av era konkurenter?</h4>
+                        <div class="answer">
+                            <p>Som bostadssökande kan du anmäla ditt intresse direkt via hemsidan och därefter chatta med hyresvärden. Detta gör det lättare för båda parter att lära känna varandra och förenklar procecssen för att boka en visning.
+
+                                <p>Som hyresvärd har du tillgång till och får överblick över hyressökandes profiler och kan enklare välja ut vem av de sökande du känner dig mest trygg med att hyra ut till.
+
+                                <p>Subbos inbyggda recensionssystem gör det dessutom möjligt att se hur din potentiella hyresvärd eller hyresgäst upplevts av andra.
+
+                            </p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <h4 class="question">Hur hyr jag ut en lägenhet?</h4>
+                        <div class="answer">
+                            <p>För att hyra ut din lägenhet behöver du först och främst registrera ett konto och logga in. Du publicerar sedan lägenheten under fliken ”Mina sidor”, till en kostnad av endast 149kr (eller 99 kr för studenter). 
+                                <p>Boka in visning med de du tycker verkar intressanta och hitta din nästa hyresgäst bland våra verifierade bostadssökande. 
+                                </p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <h4 class="question">Vad kostar det att använda Subbo?</h4>
+                        <div class="answer">
+                            <p>Ordinarie pris för att skapa en annons på Subbo.se är 149 kr. För studenter på svenska universitet har vi ett rabatterat pris på endast 99 kr per annons.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h4 class="question">Vem står bakom Subbo?</h4>
+                        <div class="answer">
+                            <p>Vi som ligger bakom Subbo är en grupp ingenjörsstudenter vid Linköpings Universitet.
+                               De allra flesta av oss och våra kamrater har upplevt problem med hur marknaden för hyresrätter fungerar. 
+                                <strong> Vi valde att ändra på det!</strong>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <h4 class="question">Hur kommer jag i kontakt med någon från Subbo?</h4>
+                        <div class="answer">
+                            <p> Det enklaste sättet är att skicka ett mail: 
+                                <br> <strong>kundtjänst@subbo.se</strong>
+                                <br> Det går även bra att ringa på 
+                                <br> <strong>+46 - 1337 13 37</strong>
+                            </p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+    </script>
+
+    <!-- /housing view -->
+
+    <script id="view-housing" type="text/html">
+        <section class="clean-block clean-form dark" style="padding-bottom: 216px;">
+            <div class="container">
+                <div class="block-heading" style="padding-top: 15px;">
+                    
+                </div>
+
+                <form style="border-top-color: rgb(19,31,40); min-width: 100%;">
+                    <div class="form-row" style="margin-left: 15px; margin-right: 15px">
+                        <div class="form-group col-lg-3 col-md-5">
+                        <label for="State">Landskap</label>
+                        <select id="State" class="form-control">            
+                          <option selected>Alla</option>
+                          <option>Blekinge</option>
+                          <option>Bohuslän</option>
+                          <option>Dalarna</option>
+                          <option>Dalsland</option>
+                          <option>Gotland</option>
+                          <option>Gästrikland</option>
+                          <option>Halland</option>
+                          <option>Hälsningland</option>
+                          <option>Härjedalen</option>
+                          <option>Jämtland</option>
+                          <option>Lappland</option>
+                          <option>Medelpad</option>
+                          <option>Norrbotten</option>
+                          <option>Närke</option>
+                          <option>Skåne</option>
+                          <option>Småland</option>
+                          <option>Södermanland</option>
+                          <option>Uppland</option>
+                          <option>Värmland</option>
+                          <option>Västerbotten</option>
+                          <option>Västergötland</option>
+                          <option>Västmanland</option>
+                          <option>Ångermanland</option>
+                          <option>Öland</option>
+                          <option>Östergötland</option>
+                        </select>
+                      </div>
+                        <div class="form-group col-lg-2 col-md-4"><label for="Room">Minst antal rum</label><select id="Room" class="form-control">            
+                            <option selected>Alla</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>6</option>
+                            <option>7</option>
+                            <option>8</option>
+                          </select></div>
+                        <div class="form-group col-lg-2 col-md-5"><label for="Area">Minst yta (m<sup>2</sup>)</label><select id="Area" class="form-control">            
+                            <option selected>Alla</option>
+                            <option>20</option>
+                            <option>30</option>
+                            <option>40</option>
+                            <option>50</option>
+                            <option>60</option>
+                            <option>70</option>
+                            <option>80</option>
+                            <option>90</option>
+                            <option>110</option>
+                            <option>120</option>
+                          </select></div>
+                          <div class="form-group col-lg-2 col-md-5"><label for="Rent">Högst hyra (kr)</label><select id="Rent" class="form-control">            
+                            <option selected>Alla</option>
+                            <option>2000</option>
+                            <option>4000</option>
+                            <option>6000</option>
+                            <option>8000</option>
+                            <option>10000</option>
+                            <option>12000</option>
+                            <option>14000</option>
+                            <option>16000</option>
+                            <option>18000</option>
+                            <option>20000</option>
+                          </select></div>  
+
+                          <div class="form-group form-group col-lg-3 col-md-5"><button id="filter" class="btn btn-primary btn-block" style="margin-top: 31px;">Filtrera</button> </div>
+    
+                    </div>
+                    <!-- <div class="form-group"><button id="filter" class="btn btn-primary btn-block" style="background: rgb(19,31,40); margin-top: 20px; max-width: 20%; align-self: center;">Filtrera</button> </div> -->
+
+                </form>
+            </div>
+            <div class="container">
+                <div id="adrows" class="row pb-5 mb-4">
+                </div>
+            </div>
+        </section>
+    </script>
+
+    <!-- /login view -->
+    <!-- Vincent är chef-->
+
+    <script id="view-login" type="text/html">
+        <section class="clean-block clean-form dark">
+            <div class="container" style="padding-bottom: 186px;">
+                <div class="block-heading" style="padding-top: 124px;">
+                    <h2 style="color: rgb(19,31,40);">Logga in</h2>
+                    <p></p>
+                </div>
+                <form style="border-top-color: rgb(19,31,40);">
+                    <div class="form-group"><label for="email">E-post</label><input class="form-control item" type="email" id="email"></div>
+                    <div class="form-group"><label for="password">Lösenord</label><input class="form-control" type="password" id="password"></div>
+                    <div class="form-group">
+                    <!--   <div class="form-check"><input class="form-check-input" type="checkbox" id="checkbox"><label class="form-check-label" for="checkbox">Kom ihåg mig</label></div> -->
+                    <label class="checkbox">
+                        <input type="checkbox" value="remember-me" id="remember_me"> Kom ihåg mig</label>
+                   </div><button id="login" class="btn btn-primary btn-block" type="submit" style="background: rgb(19,31,40);">Logga in</button> 
+                </form>
+            </div>
+        </section>
+    </script>
+
+    <!-- Register view -->
+
+    <script id="view-register" type="text/html">
+        <section class="clean-block clean-form dark">
+            <div class="container" style="padding-bottom: 127px;">
+                <div class="block-heading" style="padding-top: 77px;">
+                    <h2 style="color: rgb(19,31,40);">Bli medlem!</h2>
+                    <p>Bli medlem idag för att kunna lägga upp egna annonser och skicka intresseanmälan på bostäder</p>
+                </div>
+                <form style="border-top-color: rgb(19,31,40);">
+                    <div class="form-group"><label for="first_name">Förnamn</label><input class="form-control item" type="text" id="first_name"></div>
+                    <div class="form-group"><label for="last_name">Efternamn</label><input class="form-control item" type="text" id="last_name"></div>
+                    <div class="form-group"><label for="occupation">Sysselsättning</label><input class="form-control item" type="text" id="occupation"><small id="occupationHelp" class="form-text text-muted">T.ex. studerande, yrke, etc.</small></div>
+                    <div class="form-group">
+                        <label for="bio">Biografi</label>
+                        <textarea class="form-control" id="bio" rows="3"></textarea>
+                        <small id="bioHelp" class="form-text text-muted">Berätta vem du är, vad du söker för boende eller om du vill hyra ut en bostad.</small>
+                    </div>
+                    <div class="form-group"><label for="email">E-post</label><input class="form-control item" type="email" id="email"></div>
+                    <div class="form-group"><label for="password">Lösenord</label><input class="form-control item" type="password" id="password"></div>
+                    <div class="form-check" style="padding-bottom: 10px;">
+                        <input class="form-check-input" type="checkbox" name="is_student" id="is_student" value="option1">
+                        <label class="form-check-label" for="is_student">
+                          Student 
+                        </label>
+                        <small id="bioHelp" class="form-text text-muted">Om du är studerande vid ett svenskt universitet är du berättigad att ta del av vårt studentpris. Du betalar då endast 99 SEK istället för ordinarie 149 SEK.</small>
+                    </div>
+                    <button id="signup" class="btn btn-primary btn-block" type="submit" style="background: rgb(19,31,40);">Registrera dig</button>
+                    
+                </form>
+            </div>
+        </section>
+    </script>
+
+    <!-- mypages view -->
+
+    <script id="view-mypages" type="text/html">
+        <section class="clean-block clean-form dark" style="padding-bottom: 216px;">
+            
+            <div class="jumbotron" style="padding-bottom: 0px; position: relative;">
+                <div class="row">
+                    <div class="col-8">
+                        <div class=container style="position: relative;">
+                            <h1 class="display-4" id="jumbotron-header"></h1>
+                            <p class="lead" id="jumbotron-email" style="font-size: 16px;">Email: </p>
+                            <p class="lead" id="jumbotron-occupation" style="font-size: 16px;">Yrke/sysselsättning: </p>
+                            <p class="lead" id="jumbotron-bio" style="font-size: 18px"></p>
+                            <!--<hr class="my-4">-->
+                            <!--<p>It uses utility classes for typography and spacing to space content out within the larger container.</p>-->
+                        </div>
+                    </div>
+                    <div class="col-4" style="padding-top: 0px;">
+                        <div class="card mb-4 shadow-sm">
+                            <div class="card-header">
+                                <h4 class="my-0 text-center"> Min Bostad</h4>
+                            </div>
+                            <div class="card-body text-center" id="my-housing-title">
+                                <h3 class="card-title text-center mb-0" id="my-address"></h3>
+                                <p class="text-center" id="my-city"></p>
+                                <p class="text-center" id="my-apartment-size"></p>
+                                <p class="text-center" id="my-rent"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="position: bottom;">
+                    <p class="lead">
+                        <a class="btn btn-primary btn-lg" href="/create-advert" role="button">Skapa Annons</a>
+                        <a class="btn btn-primary btn-lg" onclick=editBio() role="button">Redigera profil</a>
+                        <a class="btn btn-primary btn-lg" href="/payment-history" role="button" id="see-payment-history">Betalningshistorik</a>
+                        <a class="btn btn-primary btn-lg" href="/my-reviews" role="button">Läs dina omdömen</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="container" style="padding-bottom: 117px;" id = "myinterests_container">
+                <div class="block-heading" style="padding-top: 5px;">
+                    <h2 style="color: rgb(19,31,40);">Bostäder du har intresseanmält dig på:</h2>
+                </div>
+                <!--<div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="assets/img/subbologo.png" alt="Card image cap">
+                    <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>-->
+            </div>
+
+            <div class="container" style="padding-bottom: 117px;" id = "mypage_container">
+                <div class="block-heading" style="padding-top: 5px;">
+                    <h2 style="color: rgb(19,31,40);">Bostäder du hyr ut just nu:</h2>
+                </div>
+                <!--<div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="assets/img/subbologo.png" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div> -->
+            </div>
+
+        </section>
+    </script>
+
+    <div class="modal" id="edit-advert-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content" style="border: white 10px solid;">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Redigera annons</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <!-- <div class="modal-body">
+                <p>Här kan du redigera annonsen för din lägenhet</p>
+            </div> -->
+
+            <!-- <div> -->
+                <form style="border-top-color: rgb(19,31,40);" id="edit-advert-form">
+                    <form>
+                        <div class="form-group">
+                        <label for="editAddress">Adress<span style="color:red"> *</span></label>
+                        <input type="text" class="form-control" id="editAddress" value="" required>
+                        </div>
+                        <div class="form-row">
+                        <div class="form-group col-md-12"> <!-- Denna rad ska nog inte egentligen behöva "col-md-12" eftersomd en bara innehåller en item.-->
+                            <label for="editity">Stad<span style="color:red"> *</span></label>
+                            <input type="text" class="form-control" id="editCity" value="" required>
+                        </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-8">
+                            <label for="editState">Landskap<span style="color:red"> *</span></label>
+                            <select id="editState" class="form-control" value="" required>
+                            <option selected>Välj...</option>
+                            <option>Blekinge</option>
+                            <option>Bohuslän</option>
+                            <option>Dalarna</option>
+                            <option>Dalsland</option>
+                            <option>Gotland</option>
+                            <option>Gästrikland</option>
+                            <option>Halland</option>
+                            <option>Hälsningland</option>
+                            <option>Härjedalen</option>
+                            <option>Jämtland</option>
+                            <option>Lappland</option>
+                            <option>Medelpad</option>
+                            <option>Norrbotten</option>
+                            <option>Närke</option>
+                            <option>Skåne</option>
+                            <option>Småland</option>
+                            <option>Södermanland</option>
+                            <option>Uppland</option>
+                            <option>Värmland</option>
+                            <option>Västerbotten</option>
+                            <option>Västergötland</option>
+                            <option>Västmanland</option>
+                            <option>Ångermanland</option>
+                            <option>Öland</option>
+                            <option>Östergötland</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="editZip">Postnummer<span style="color:red"> *</span></label>
+                            <input type="text" class="form-control" id="editZip" value="" required>
+                        </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6"><label for="editStartDate">Tillgänglig från<span style="color:red"> *</span></label><input class="form-control" type="date" id="editStartDate" value="" required></div>
+                            <div class="form-group col-md-6"><label for="editEndDate">Tillgänglig till<span style="color:red"> *</span></label><input class="form-control" type="date" id="editEndDate" value="" required></div>
+                        </div>  
+                        <div class="form-row">
+                            <div class="form-group col-md-6"><label for="editRooms">Antal rum<span style="color:red"> *</span></label><input class="form-control" type="number" id="editRooms" value="" required></div>
+                            <div class="form-group col-md-6"><label for="editArea">Yta (m<sup>2</sup>)<span style="color:red"> *</span></label><input class="form-control" type="number" id="editArea" value="" required></div>
+                        </div>  
+                        <div class="form-group"><label for="editRent">Hyra (SEK)<span style="color:red"> *</span></label><input class="form-control" type="number" id="editRent" value="" required></div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="kallvarmhyra" id="editKallhyra" value="option1" checked>
+                            <label class="form-check-label" for="editKallhyra">
+                            Kallhyra 
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="kallvarmhyra" id="editVarmhyra" value="option2">
+                            <label class="form-check-label" for="editVarmhyra">
+                            Varmhyra
+                            </label>
+                        </div>
+
+                        <div class="form-group"><label for="editAdvertDescription">Annonstext</label><input class="form-control" type="text" id="editAdvertDescription" value="" ></div>
+                        <!-- <button class="btn btn-primary btn-block" id="edit-images" type="button" style="background: rgb(19,31,40);margin-top: 17px;" data-id="">Ändra bilderna för annonsen</button> -->
+                        <div id="edit-images-div"></div>
+                        <button class="btn btn-primary btn-block" id="submit-edited-advert" type="submit" style="background: rgb(19,31,40);margin-top: 17px;">Spara ändringar</button>
+                    </form>
+                </form>
+            <!-- </div> -->
+              <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Stäng</button> -->
+          </div> 
+          </div>
+        </div>
+    </div>
+
+    <!-- createadvert view -->
+
+    <script id="view-createadvert" type="text/html">
+        <section class="clean-block clean-form dark">
+            <div class="container" style="padding-bottom: 117px;">
+                <div class="block-heading" style="padding-top: 92px;padding-bottom: 6px;">
+                    <h2 style="color: rgb(19,31,40);">Skapa en annons</h2>
+                </div>
+                <form style="border-top-color: rgb(19,31,40);" id="create-advert-form">
+                    <form>
+                        <fieldset id="create-ad-fieldset">
+                        <div class="form-group">
+                          <label for="inputAddress">Adress<span style="color:red"> *</span></label>
+                          <input type="text" class="form-control" id="inputAddress" required>
+                        </div>
+                        <div class="form-row">
+                          <div class="form-group col-md-12"> <!-- Denna rad ska nog inte egentligen behöva "col-md-12" eftersomd en bara innehåller en item.-->
+                            <label for="inputCity">Stad<span style="color:red"> *</span></label>
+                            <input type="text" class="form-control" id="inputCity" required>
+                          </div>
+                        </div>
+                        <div class="form-row"><!--La till egen rad för landskap & postnummer för att de skulle få mer plats. Om "col-md-x" ändras så ska varje rad adderas till 12.-->
+                            <div class="form-group col-md-8">
+                            <label for="inputState">Landskap<span style="color:red"> *</span></label>
+                            <select id="inputState" class="form-control" required>
+                              <option selected>Välj...</option>
+                              <option>Blekinge</option>
+                              <option>Bohuslän</option>
+                              <option>Dalarna</option>
+                              <option>Dalsland</option>
+                              <option>Gotland</option>
+                              <option>Gästrikland</option>
+                              <option>Halland</option>
+                              <option>Hälsningland</option>
+                              <option>Härjedalen</option>
+                              <option>Jämtland</option>
+                              <option>Lappland</option>
+                              <option>Medelpad</option>
+                              <option>Norrbotten</option>
+                              <option>Närke</option>
+                              <option>Skåne</option>
+                              <option>Småland</option>
+                              <option>Södermanland</option>
+                              <option>Uppland</option>
+                              <option>Värmland</option>
+                              <option>Västerbotten</option>
+                              <option>Västergötland</option>
+                              <option>Västmanland</option>
+                              <option>Ångermanland</option>
+                              <option>Öland</option>
+                              <option>Östergötland</option>
+                            </select>
+                          </div>
+                          <div class="form-group col-md-4">
+                            <label for="inputZip">Postnummer<span style="color:red"> *</span></label>
+                            <input type="text" class="form-control" id="inputZip" required>
+                          </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6"><label for="inputStartDate">Tillgänglig från<span style="color:red"> *</span></label><input class="form-control" type="date" id="inputStartDate" required></div>
+                            <div class="form-group col-md-6"><label for="inputEndDate">Tillgänglig till<span style="color:red"> *</span></label><input class="form-control" type="date" id="inputEndDate" required></div>
+                        </div>  
+                        <div class="form-row">
+                            <div class="form-group col-md-6"><label for="inputRooms">Antal rum<span style="color:red"> *</span></label><input class="form-control" type="number" id="inputRooms" required></div>
+                            <div class="form-group col-md-6"><label for="inputArea">Yta (m<sup>2</sup>)<span style="color:red"> *</span></label><input class="form-control" type="number" id="inputArea" required></div>
+                        </div>  
+                        <div class="form-group"><label for="inputRent">Hyra (SEK)<span style="color:red"> *</span></label><input class="form-control" type="number" id="inputRent" required></div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="kallvarmhyra" id="kallhyra" value="option1" checked>
+                            <label class="form-check-label" for="kallhyra">
+                              Kallhyra 
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" name="kallvarmhyra" id="varmhyra" value="option2">
+                            <label class="form-check-label" for="varmhyra">
+                              Varmhyra
+                            </label>
+                          </div>
+                        <div class="form-group"><label for="inputAdvertDescription">Annonstext</label><input class="form-control" type="text" id="inputAdvertDescription"></div>
+                        <button class="btn btn-primary btn-block" id="go-to-image-upload" type="submit" style="background: rgb(19,31,40);margin-top: 17px;" value="">Lägg till bilder</button>
+                    </fieldset>
+                        <button class="btn btn-primary btn-block" id="go-to-payment" type="button" style="background: rgb(19,31,40);margin-top: 17px;" value="" disabled="true">Betala</button>
+                    </form>
+                </form>
+            </div>
+        </section>
+        <script src="assets/js/payment.js"></script>
+
+    </script>
+
+    <div class="modal fade" id="payment-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Betala</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <p>Ange kortnummer 4000 0075 2000 0008 med valfri CVC och datum i framtiden för att betalningen ska gå igenom</p>
+                <form id="payment-form" style="border-top-color: rgb(19,31,40);">
+                    <fieldset>
+                        <div class="row">
+                          <input id="customer-name" data-tid="paymentform.name_placeholder" type="text" placeholder="Namn" required="" autocomplete="name" required>
+                        </div>
+                        <div class="row">
+                          <input id="customer-email" data-tid="paymentform.email_placeholder" type="email" placeholder="email" required="" autocomplete="email" readonly>
+                        </div>
+                      </fieldset>
+                      <fieldset>
+                        <div class="row">
+                          <div id="card-element"></div>
+                        </div>
+                      </fieldset>
+                    <div id="card-error" role="alert"></div>
+                        <button id="pay" disabled>
+                            <span id="pay-button-text">Betala </span>
+                        </button>
+                        <p class="result-message hidden">
+                            Betalningen lyckades!
+                        </p>
+                        <p class="payment-failed-message hidden">
+                            Betalningen misslyckades!
+                        </p>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Stäng</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal for image uploads -->
+    <div class="modal fade" id="image-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Lägg till upp till tre bilder</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                    <form enctype="multipart/form-data" id="imageForm">
+                    <div class="form-group">
+                        <input type="file" id="firstImage" name="firstImage">
+                        <input type="file" id="firstImage" name="secondImage">
+                        <input type="file" id="firstImage" name="thirdImage">
+                        <button type="button" class="btn btn-primary btn-block" id=imageNext style="background: rgb(19,31,40);margin-top: 17px;">Lägg till valda bilder</button>
+                    </div>    
+                </form>
+            </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal for image edits -->
+    <div class="modal" id="edit-image-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Lägg till upp till tre bilder</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Om du väljer nya bilder och klickar "uppdatera bilder" tas de gamla bilderna bort från annonsen och de nya läggs till</p>
+                <form enctype="multipart/form-data" id="editImageForm">  
+                    <div class="form-group">
+                        <input type="file" id="firstImage" name="firstImage">
+                        <input type="file" id="firstImage" name="secondImage">
+                        <input type="file" id="firstImage" name="thirdImage">
+                        <button type="button" class="btn btn-primary btn-block" id=editImageNext style="background: rgb(19,31,40);margin-top: 17px;">Uppdatera bilderna</button>
+                    </div>  
+                </form>
+            </div>
+            </div>
+        </div>
+    </div>
+   
+    <script id="view-ad" type="text/html">
+        <section class="clean-block clean-form dark" style="padding-bottom: 216px;">
+            
+                <div class="block-heading" style="padding-top: 5px;">
+                    <!-- <h3 class="text-left" style="color: rgb(19,31,40);">ANNONS</h3> -->
+                </div>
+           
+            <div class="container" id="advert_body">
+                <div id="advertrow" class="row pb-5 mb-4">
+                </div>
+            </div>
+            <div class="container">
+                <h2>Hyresvärdens omdömen</h2>
+                <div id="user-reviews-on-ad">
+                </div>
+            </div>
+        </section>
+    </script>
+
+    <script id="view-paymenthistory" type="text/html">
+        <section class="clean-block clean-form dark">
+            <div class="container" style="padding-bottom: 117px" id="paymenthistory_container">
+                <div class="block-heading">
+                    <h2 style="color: #131f28;font-size: 35px;">Betalningshistorik</h2>
+                    <p>Här ser du din historik över dina senaste betalningar.</p>
+                </div>
+            </div>
+        </section>
+    </script>
+
+    
+    <script id="view-admin-login" type="text/html"> 
+        <section class="clean-block clean-form dark">
+            <div class="container" style="padding-bottom: 186px;">
+                <div class="block-heading" style="padding-top: 124px;">
+                    <h1 style="color: rgb(19,31,40);">Logga in som admin</h1>
+                </div>
+                <form style="border-top-color: rgb(19,31,40);">
+                    <div class="form-group"><label for="email">Användare</label><input class="form-control item" type="username" id="admin-username"></div>
+                    <div class="form-group"><label for="password">Lösenord</label><input class="form-control" type="password" id="admin-password"></div>
+                    <button id="admin-login" class="btn btn-primary btn-block" type="submit" style="background: rgb(19,31,40);">Logga in</button> 
+                </form>
+            </div>
+        </section>
+    </script>
+    
+    <script id="view-chat" type="text/html">
+        <section class="clean-block clean-form dark">
+            <div class="container">
+                <div class="container">
+                    <div class="block-heading">
+                    <h2 style="color: #131f28;font-size: 35px;">Chatt</h2>
+                    <p>Här kan du chatta med andra användare!</p>
+                    <div class="messaging">
+                          <div class="inbox_msg">
+                            <div class="inbox_people">
+                              <div class="headind_srch">
+                                <div class="recent_heading">
+                                  <h4>Kontakter </h4>
+                                </div>
+                                <div class="srch_bar">
+                                  <div class="stylish-input-group">
+                                    <button id="newcontact" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modal" style="background: rgb(19,31,40);">Ny konversation</button>
+                                    <span class="input-group-addon">
+                                    <button type="button"> <i class="fa fa-search" aria-hidden="true"></i> </button>
+                                    </span> </div>
+                                </div>
+                              </div>
+                              <div class="inbox_chat" id="inbox_chat">
+                                <div class="chat_list active_chat" id="contact">
+                                    <div class="chat_people">
+                                      <div class="chat_ib">
+                                        <h5 id="contactname">Subbos Öppna Chatt</h5>
+                                      </div>
+                                    </div>
+                                  </div>
+                              </div>
+                            </div>
+                            <div class="mesgs">
+                              <div class="msg_history" id="chat"></div>
+                              <div class="type_msg">
+                                <div class="input_msg_write">
+                                  <input id="myMessage" type="text" class="write_msg" placeholder="Type a message" />
+                                  <button class="msg_send_btn" type="button" id="sendbutton"><i class="far fa-paper-plane"></i></button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </script>
+
+    <script id="view-admin" type="text/html">
+        <div id="admin-div">
+            <div class="block-heading" style="padding-bottom:33px">
+            </div>
+    
+            <div class="sidebar">
+                <ul class="sidebar-nav">
+                    <li class="sidebar-nav-item">
+                        <a onclick=loadAdminPages() role="button" class="sidebar-nav-link active" id="sidebar-status">
+                            <div>
+                                <i class="fas fa-info"></i>
+                            </div>
+                            <span>Status</span>
+                        </a>
+                    </li>
+                    <li  class="sidebar-nav-item">
+                        <a onclick=editUsersView() role="button" class="sidebar-nav-link" id="sidebar-users">
+                            <div>
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <span>Redigera Användare</span>
+                        </a>
+                    </li>
+                    <li  class="sidebar-nav-item">
+                        <a onclick=editApartmentsView() role="button" class="sidebar-nav-link" id="sidebar-apartments">
+                            <div>
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <span>Redigera Lägenheter</span>
+                        </a>
+                    </li>
+                    <li  class="sidebar-nav-item">
+                        <a onclick=editReviewsView() role="button" class="sidebar-nav-link" id="sidebar-reviews">
+                            <div>
+                                <i class="fas fa-list"></i>
+                            </div>
+                            <span>Redigera Omdömen</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        
+            <div class="admin-wrapper" style="min-height:100vh">
+                <div class="row">
+                    <div class="col">
+                        <div class="card">
+                            <div class="counter bg-primary">
+                                <p>
+                                    <i class="fas fa-users"></i>
+                                </p>
+                                <h1 id="number-of-users"></h1>
+                                <p>Användare</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <div class="counter bg-success">
+                                <p>
+                                    <i class="fas fa-building"></i>
+                                </p>
+                                <h1 id="number-of-apartments"></h1>
+                                <p>Lägenheter</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="card">
+                            <div class="counter bg-danger">
+                                <p>
+                                    <i class="fas fa-list"></i>
+                                </p>
+                                <h1 id="number-of-reviews"></h1>
+                                <p>Omdömen</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </script>
+    
+
+    
+    <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Ny konversation</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <input id="contactinput" type="text" class="write_msg" placeholder="Fyll i vem du vill chatta med" />
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Stäng</button>
+              <button type="button" id="startchat" class="btn btn-primary">Börja chatta</button>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    
+    <div class="modal fade" id="rate-user-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Ge ett omdöme</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <form id="rating-user-form" style="border-top-color: rgb(19,31,40);">
+                    <div class="form-group">
+                        <input type="hidden" id="leave-review-on">
+                        <label for="rating">Betyg</label>
+                            <input class="form-control" type="number" min="1" max="5" id="input-rating" required>
+                        <div id="stars">
+                            <span class="fa fa-star checked" id="first-star"></span>
+                            <span class="fa fa-star checked" id="second-star"></span>
+                            <span class="fa fa-star checked" id="third-star"></span>
+                            <span class="fa fa-star" id="fourth-star"></span>
+                            <span class="fa fa-star" id="fifth-star"></span>
+                        </div>
+                        <small id="bioHelp" class="form-text text-muted">Du kan antingen skriva in betyget (1-5) i rutan eller trycka på rätt antal stjärnor.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="comments">Kommentarer</label>
+                        <textarea class="form-control" id="user-comments" rows="3"></textarea>
+                        <small id="bioHelp" class="form-text text-muted">Motivera gärna varför du gav det betyg du gjorde.</small>
+                      </div>
+                    <button id="leave-rating" class="btn btn-primary btn-block" type="submit" style="background: rgb(19,31,40);">Lämna omdöme</button>
+                    
+                </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Stäng</button>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <script id="view-reviews" type="text/html">
+        <section class="clean-block clean-form dark">
+            <div class="container" style="padding-bottom: 117px" id="userreviews_container">
+                <div class="block-heading">
+                    <h2 style="color: #131f28;font-size: 35px;">Omdömen</h2>
+                </div>
+                <div>
+                    <span class="fa fa-star checked"></span>
+                    <p id="average-rating"></p>
+                </div>
+                <!-- <button class="btn btn-primary btn-block" id="fetch-reviews" style="background: rgb(19,31,40);margin-top: 17px;">Hämta omdömen</button> -->
+            </div>
+        </section>
+    </script>
+                
+
+
+
+
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/page.js/1.11.6/page.js"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="assets/js/index.js"></script>
+    <script src="assets/js/housing.js"></script>
+    <script src="assets/js/login.js"></script>
+    <script src="assets/js/mypages.js"></script>
+    <script src="assets/js/registration.js"></script>
+    <script src="assets/js/createadvert.js"></script>
+    <script src="assets/js/advert.js"></script>
+    <script src="assets/js/allmain.js"></script>
+    <script src="assets/js/paymenthistory.js/"></script>
+    <script src="assets/js/rating.js"></script>
+    <script src="assets/js/admin.js"></script>
+    <script src="assets/js/chat.js/"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Router page.js, kanske byta ut mot hashchange-event router -->
+    <script>
+        // the "notfound" implements a catch-all
+        // with page('*', notfound). Here we have
+        // no catch-all, so page.js will redirect
+        // to the location of paths which do not
+        // match any of the following routes
+        //
+        //page.base('/basic');
+
+        page('/', index);
+        page('/faq', faq);
+        page('/housing', housing);
+        page('/housing&state=:state&room=:room&area=:area&rent=:rent', housing);
+        page('/login', login);
+        page('/register', register);
+        page('/my-pages', mypages);
+        page('/create-advert', createadvert);
+        // page('/payment', paymentpage)
+        page('/ad&id=:id', ad);
+        page('/payment-history', paymenthistory);
+        page('/my-reviews', userReviews);
+        page('/admin', adminLogin);
+
+        page('/chat', chat);
+
+        page();
+
+        function index() {
+            $("#wrapper").html($("#view-home").html());
+        }
+
+        function faq() {
+            $("#wrapper").html($("#view-faq").html());
+        }
+
+        function housing(ctx) {
+            $("#wrapper").html($("#view-housing").html());
+            $(document).ready(function(){
+                $(document).trigger("housingroute", [ ctx.params.state, ctx.params.room, ctx.params.area, ctx.params.rent ]);
+            });
+            //$(document).trigger("housingroute");
+
+        }
+
+        
+        function login() {
+            $("#wrapper").html($("#view-login").html());
+            $(document).ready(function(){
+                $(document).trigger("loginroute");
+            });
+        }
+
+        function register() {
+            $("#wrapper").html($("#view-register").html());
+        }
+
+        function mypages() {
+            $("#wrapper").html($("#view-mypages").html());
+            $(document).ready(function(){
+                $(document).trigger("mypagesroute");
+            });
+        }
+
+        function createadvert() {
+            $("#wrapper").html($("#view-createadvert").html());
+        }
+
+        function paymenthistory() {
+            $("#wrapper").html($("#view-paymenthistory").html());
+        }
+
+        function chat() {
+            $("#wrapper").html($("#view-chat").html());
+            $(document).ready(function () {
+                $(document).trigger("startchat");
+            });
+        }
+
+        function ad(ctx) {
+            //print("TEST")
+            $("#wrapper").html($("#view-ad").html());
+            $(document).ready(function () {
+                $(document).trigger("advertroute", [ctx.params.id]);
+            });
+        }
+
+        function userReviews(){
+            $("#wrapper").html($("#view-reviews").html());
+            $(document).ready(function() {
+                $(document).trigger("readreviewsroute");
+            });
+        }
+
+        function adminLogin() {
+            $("#wrapper").html($("#view-admin-login").html());
+        }
+    </script>
+
+</body>
+
+</html>
