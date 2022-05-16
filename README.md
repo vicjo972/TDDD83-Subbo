@@ -1,6 +1,5 @@
 # TDDD83-Subbo
-Grupp-projekt från våren 2021 där vi utvecklade en single page application för att hyra och hyra ut bostäder. Vi hade HTML och Javascript med Jquery i frontend, flask med lite olika 
-tillägg för t.ex. autentisering och databashantering,
+Grupp-projekt från våren 2021 där vi utvecklade en single page application för att hyra och hyra ut bostäder. Vi hade HTML och Javascript med Jquery i frontend, flask med lite olika tillägg för t.ex. autentisering och databashantering (sqlalchemy), och SQLite som databas.
 
 Jag var övergripande ansvarig för formgivningen på alla sidor.
 Här är lite bilder på vyer som jag har byggt, för de flesta funktionerna på dessa vyer har jag också byggt motsvarande routes i flask-servern. Bland annat byggde jag 
