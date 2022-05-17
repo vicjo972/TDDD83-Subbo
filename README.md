@@ -2,7 +2,7 @@
 Grupp-projekt från våren 2021 där vi utvecklade en single page application (SPA) för att hyra och hyra ut bostäder. Vi hade HTML och Javascript med Jquery i frontend, flask med lite olika tillägg för t.ex. autentisering och databashantering (sqlalchemy), och SQLite som databas. Med arbetet ville vi ta reda på hur man utvecklade en hemsida
 som var tillgänglig för synnedsatta genom att uppfylla WCAG-riktlinjer och se till att sidan fungerade med syntolk. 
 
-Här är lite bilder på vyer som jag har byggt, för de flesta funktionerna på dessa vyer har jag också byggt motsvarande routes i flask-servern och databasmodeller, t.ex. hämta annonser, skapa användare, etc. Bland annat byggde jag vyn för bostäder där användare kan filtrera annonser utifrån lite olika alternativ. Eftersom hemsidan var en single page application
+Nedan finns lite bilder på vyer som jag har byggt, för de flesta funktionerna på dessa vyer har jag också byggt motsvarande routes i flask-servern och databasmodeller, t.ex. hämta annonser, skapa användare, etc. Bland annat byggde jag vyn för bostäder där användare kan filtrera annonser utifrån lite olika alternativ. Eftersom hemsidan var en single page application
 servade vi inte statiska html-filer från servern, så vi kunde inte ha url-routing genom flask. Jag tyckte det var viktigt att ha routing i klienten så jag 
 implementerade ett litet javascript-bibliotek (page.js) för det. Jag var även ansvarig för formgivningen på alla sidor.
 
