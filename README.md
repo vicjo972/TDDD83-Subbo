@@ -7,7 +7,7 @@ servade vi inte statiska html-filer från servern, så vi kunde inte ha url-rout
 implementerade ett litet javascript-bibliotek för det. Jag var även ansvarig för formgivningen på alla sidor.
 
 Det här projektet var min första introduktion till webbprogrammering. Det jag tar med mig var främst hur man manipulerar HTML med Javascript, 
-hur man kan bygga och använda ett REST API, och hur man kan skriva modeller för sql-databaser samt hur man skriver queries. 
+hur man kan bygga och använda ett REST API, och hur man kan skriva modeller och hämta data från sql-databaser.
 
 ![Startsidan](https://user-images.githubusercontent.com/79589708/168683367-61867850-8f42-4221-b0a1-1b33d997535d.png)
 ![Bostäder](https://user-images.githubusercontent.com/79589708/168683387-63d50b70-2141-4263-b408-b41f23a4e5bd.png)
