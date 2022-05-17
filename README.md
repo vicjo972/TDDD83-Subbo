@@ -6,7 +6,7 @@ Här är lite bilder på vyer som jag har byggt, för de flesta funktionerna på
 servade vi inte statiska html-filer från servern, så vi kunde inte ha url-routing genom flask. Jag tyckte det var viktigt att ha routing i klienten så jag 
 implementerade ett litet javascript-bibliotek för det. Jag var även ansvarig för formgivningen på alla sidor.
 
-Det här projektet var min första introduktion till webbprogrammering. Det jag tar med mig var främst hur man manipulerar HTML med Javascript, 
+Det här projektet var min första introduktion till webbprogrammering. Det jag tog med mig var främst hur man manipulerar HTML med Javascript, 
 hur man kan bygga och använda ett REST API, och hur man kan skriva modeller och hämta data från sql-databaser.
 
 ![Startsidan](https://user-images.githubusercontent.com/79589708/168683367-61867850-8f42-4221-b0a1-1b33d997535d.png)
