@@ -8,7 +8,7 @@ implementerade ett litet javascript-bibliotek (page.js) för det. Jag var även 
 
 Det här projektet var min första introduktion till webbprogrammering. Det jag tog med mig var främst hur man manipulerar HTML med Javascript, 
 hur man kan bygga och använda ett REST API, och hur man kan skriva modeller och hämta data från sql-databaser. När jag ser tillbaka på det här nu tänker jag att
-vi hade kunnat ha lite bättre filstruktur, t.ex. delat upp koden i servern i mindre filer. Att göra en SPA på det här sättet gjorde också att vi fick en lång HTML-fil som inte blev så hanterbar. Under det här projektet visste jag inte heller vad template strings var, så den HTML jag skrev i Javascript är inte så läsbar.
+vi hade kunnat ha lite bättre filstruktur, t.ex. delat upp koden i servern i mindre filer. Att göra en SPA på det här sättet gjorde också att vi fick en lång HTML-fil som inte blev så hanterbar.
 
 ![Startsidan](https://user-images.githubusercontent.com/79589708/168683367-61867850-8f42-4221-b0a1-1b33d997535d.png)
 
